@@ -1,0 +1,2 @@
+The following is a text file and will only contain text.
+Text here.
