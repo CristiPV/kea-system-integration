@@ -41,6 +41,11 @@ app.get("/timestamp", (req, res) => {
   res.send({ "Node Server Timestamp": new Date().toISOString() });
 });
 
+
+app.post("/github", (req, res) => {
+  console.log(req.body);
+});
+
 /**
  * @openapi
  * /*:
@@ -54,9 +59,6 @@ app.get("/*", (req, res) => {
   res.send("Oopsie, you have wandered too far. Go back to where you belong!");
 });
 
-app.post("/github", (req, res) => {
-  console.log(req.body);
-});
 
 app.listen(PORT, (error) => {
   if (error) {
