@@ -15,6 +15,13 @@ app.get("/timestamp/python", async (req, res) => {
   res.send({ "Python Response": pythonTimestamp });
 });
 
+app.get("/timestamp/ngrok", async (req, res) => {
+  const ngrokTimestamp = await (
+    await fetch("https://6a6c-94-18-243-162.eu.ngrok.io/timestamp")
+  ).json();
+  res.send({ "Ngrok Response": ngrokTimestamp });
+});
+
 app.get("/*", (req, res) => {
   res.send("Oopsie, you have wandered too far. Go back to where you belong!");
 });
