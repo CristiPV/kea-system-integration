@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}

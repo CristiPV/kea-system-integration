@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "nodemon file-reader.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "csv": "^6.2.0",
+    "js-yaml": "^4.1.0",
+    "xml2js": "^0.4.23"
+  }
+}
