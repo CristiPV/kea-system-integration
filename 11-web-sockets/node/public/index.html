@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Sockets</h2>
+    <input id="socket-data-input" type="text" placeholder="Your name here..." />
+    <button onclick="sendPing()">Emit Ping</button>
+    <div id="socket-info"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      console.log("Socket connected: ", socket);
+
+      socket.on("pong", (data) => {
+        document.getElementById("socket-info").innerText +=
+          "Message received: " + data.message + "\n";
+      });
+
+      function sendPing() {
+        console.log("Sending Ping");
+        const data = document.getElementById("socket-data-input").value;
+        socket.emit("ping", { message: data });
+      }
+    </script>
+  </body>
+</html>
